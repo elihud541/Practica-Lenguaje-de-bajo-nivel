@@ -94,4 +94,24 @@ def menu():
 menu()
 
 """
+def main():
 
+    while True:
+        print("\n//////////////////////////////////////////////////////////////////////////////////")
+        print("\tBienvenido al menu de PRACTICA DE\nLENGUAJE DE BAJO NIVEL")
+        print("\//////////////////////////////////////////////////////////////////////////////////")
+        print("\n1. Convertir de binario a octal.")
+        print("2. Convertir de binario a hexadecimal. ")
+        print("3. Convertir de octal a hexadecimal.  ")
+        print("4. Convertir de hexadecimal a octal. ")
+        print("5. Sumar dos números binarios. ")
+        print("6. Restar dos números binarios. ")
+        print("7. Obtener complemento a 1 y a 2. ")
+        print("8. Convertir letras mayúsculas a ASCII decimal y binario.")
+        print("9. Salir.  ")
+        opcion_menu = int(input("Elige una opcion del 1-9: "))
+
+        match opcion_menu:
+            case 1: 
+                pass
+            
