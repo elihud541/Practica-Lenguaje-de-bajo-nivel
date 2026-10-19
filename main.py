@@ -73,10 +73,10 @@ def LOGICA1():
 
 def menu():
     while True:
-        print("\n//////////////////////////////")
-        print("\tDECIMAL a BINARIO")
         print("//////////////////////////////")
-        print("\n1) Decimal a Binario>>>")
+        print("DECIMAL a BINARIO")
+        print("//////////////////////////////")
+        print("1) Decimal a Binario>>>")
         print("2) Salir del programa>>>")
 
         try:
@@ -94,12 +94,37 @@ def menu():
 menu()
 
 """
+
+def op1():
+    pass
+
+def op2():
+    pass
+
+def op3():
+    pass
+
+def op4():
+    pass
+
+def op5():
+    pass
+
+def op6():
+    pass
+
+def op7():
+    pass
+
+def op8():
+    pass
+
 def main():
 
     while True:
         print("\n//////////////////////////////////////////////////////////////////////////////////")
         print("\tBienvenido al menu de PRACTICA DE\nLENGUAJE DE BAJO NIVEL")
-        print("\//////////////////////////////////////////////////////////////////////////////////")
+        print("////////////////////////////////////////////////////////////////////////////////")
         print("\n1. Convertir de binario a octal.")
         print("2. Convertir de binario a hexadecimal. ")
         print("3. Convertir de octal a hexadecimal.  ")
@@ -113,5 +138,34 @@ def main():
 
         match opcion_menu:
             case 1: 
-                pass
-            
+                op1()
+
+            case 2:
+                op2()
+
+            case 3:
+                op3()
+
+            case 4:
+                op4()
+
+            case 5:
+                op5()
+
+            case 6:
+                op6()
+
+            case 7:
+                op7()
+
+            case 8:
+                op8() 
+
+            case 9:
+                print("Saliendo del programa...")
+                break               
+
+            case _:
+                print("Opcion no valida, Ingrese una opcion valida.") 
+
+main()
