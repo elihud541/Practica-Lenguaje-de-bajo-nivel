@@ -127,9 +127,21 @@ def op4():
     pass
 
 def op5():
+    binario1 = input("Ingresa el primer número binario: ")
+    binario2 = input("Ingresa el segundo número binario: ")
+
+    numero1 = int(binario1, 2)
+    numero2 = int(binario2, 2)
+
+    suma = numero1 + numero2
+
+    resultado = bin(suma)[2:]
+
+    print("Resultado de la suma:", resultado)
     pass
 
 def op6():
+    
     pass
 
 def op7():
