@@ -105,8 +105,6 @@ def op1():
     except ValueError:
         print("Hay un error por favor ingresa un numero binario valido (solo ceros y unos).")
 
-
-
 def op2():
     print("OCTAL A HEXADECIMAL>>>")
     num_octal = input("Ingresa el numero octal: ")
@@ -120,6 +118,7 @@ def op2():
         print(f"El resultado en hexadecimal es: {hexadecimal}")
     except ValueError:
         print("Hay un error poor favor ingresa un numero octal valido (dígitos del 0 al 7).")
+
 
 def op3():
     pass
