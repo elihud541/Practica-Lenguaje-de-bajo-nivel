@@ -1,17 +1,6 @@
 """
 Actividad de programación  
-Desarrolla un programa con un menú que permita convertir números entre bases, sumar y restar en binario, obtener complementos a 1 y a 2 y consultar códigos ASCII de letras mayúsculas.  
-
-Menú principal  
-1. Convertir de binario a octal.  
-2. Convertir de binario a hexadecimal.  
-3. Convertir de octal a hexadecimal.  
-4. Convertir de hexadecimal a octal.  
-5. Sumar dos números binarios.  
-6. Restar dos números binarios.  
-7. Obtener complemento a 1 y a 2.  
-8. Convertir letras mayúsculas a ASCII decimal y binario.  
-9. Salir.  
+Desarrolla un programa con un menú que permita convertir números entre bases, sumar y restar en binario, obtener complementos a 1 y a 2 y consultar códigos ASCII de letras mayúsculas.
 
 Opciones 1 a 4 Conversiones entre bases  
 Solicita un número en la base correspondiente a la opción elegida y muestra su equivalente en la base de destino. Identifica claramente la base de entrada y la del resultado.  
@@ -96,10 +85,28 @@ menu()
 """
 
 def op1():
-    pass
+    print("BINARIO A HEXADECIMAL>>>")
+    num_binario = input("Ingresa el numero binario: ")
+    
+    try:
+        decimal = int(num_binario, 2)
+        hexadecimal = hex(decimal)[2:].upper()
+        
+        print(f"El resultado en hexadecimal es: {hexadecimal}")
+    except ValueError:
+        print("Hay un error por favor ingresa un numero binario valido (solo ceros y unos).")
 
 def op2():
-    pass
+    print("OCTAL A HEXADECIMAL>>>")
+    num_octal = input("Ingresa el numero octal: ")
+    
+    try:
+        decimal = int(num_octal, 8)
+        hexadecimal = hex(decimal)[2:].upper()
+
+        print(f"El resultado en hexadecimal es: {hexadecimal}")
+    except ValueError:
+        print("Hay un error poor favor ingresa un numero octal valido (dígitos del 0 al 7).")
 
 def op3():
     pass
