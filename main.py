@@ -34,50 +34,65 @@ def op2():
         print("Hay un error poor favor ingresa un numero octal valido (dígitos del 0 al 7).")
 
 def op5():
+    #Estos son para guardar los binarios
     binario1 = ""
     binario2 = ""
 
     try:
+        #Esto pide los binarios
         binario1 = input("Ingresa el primer número binario: ")
         binario2 = input("Ingresa el segundo número binario: ")
-
+        
+        #Esto guarda los resultados y el acarreo
         resultado = ""
         acarreo = 0
 
+        #Esto consigue la posicion de cada digito, se va a usar para ir recorriendo los numeros a sumar
         i = len(binario1) - 1
         j = len(binario2) - 1
 
+        #Recorre de derecha a izquierda mientras tenga numeros, es para ir sumand dos digitos en la misma "columna"
         while i >= 0 or j >= 0:
 
+            #Consigue el digito actual, si no hya, utiliza 0
             bit1 = int(binario1[i]) if i >= 0 else 0
             bit2 = int(binario2[j]) if j >= 0 else 0
 
+            #Esto es la suma de los digitos mas el acarreo en caso de tener
             suma = bit1 + bit2 + acarreo
 
+            #Si la suma dio 0, el resultado es 0 y sin acarreo, se le agrega a la derecha el resultado anterior y se convierte en el nuevo resultado
             if suma == 0:
                 resultado = "0" + resultado
                 acarreo = 0
 
+              #Si la suma dio 1, el resultado es 1 y sin acarreo, se le agrega a la derecha el resultado anterior y se convierte en el nuevo resultado
             elif suma == 1:
                 resultado = "1" + resultado
                 acarreo = 0
-
+              #Si la suma dio 2, el resultado es 0 y con acarreo de 1, se le agrega a la derecha el resultado anterior y se convierte en el nuevo resultado
             elif suma == 2:
                 resultado = "0" + resultado
                 acarreo = 1
 
+              #Si la suma dio 3, el resultado es 1 y con acarreo de 1, se le agrega a la derecha el resultado anterior y se convierte en el nuevo resultado
             elif suma == 3:
                 resultado = "1" + resultado
                 acarreo = 1
 
+            #Avanza a las posiciones anteriores, ya que la suma es de derecha a izquierda, se mueven a la izquierda
             i -= 1
             j -= 1
 
+
+        #Si todavia hay un acarreo al final, se coloca y a la derecha se le agrega todo el resultado y se convierte en el nuevo resultado
         if acarreo == 1:
             resultado = "1" + resultado
 
+        #Imprime el resultado
         print("Resultado:", resultado)
 
+    #Por si algun dato esta ma puesto, te avisa y reinicia
     except ValueError:
         print("Ingrese un valor valido")
         op5()
