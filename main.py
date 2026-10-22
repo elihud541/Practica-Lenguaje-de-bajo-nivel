@@ -163,6 +163,21 @@ def op6():
 
     print(f"El resultado de la resta es: {resultado}")
 
+def op8():
+    
+    letra = input("Ingresa una letra mayúscula: ").upper() 
+    #.upper es un metodo que convierte el caracter que escribió el usuario a mayusculas y que se guardara dentro de la variable letra
+
+    decimal = ord(letra) #ord() es la funcion que devuelve un caracter en su valor numerico decimal de la tabla ASCII y lo guarda en la variable decimal
+    binario = bin()[2:] #bin() convierte el numero de la variable decimal a su equivalente en binario
+    #python por defecto añade el prefijo '0b' y '[2:]' hace que se omitan estos caracteres  
+    
+    
+    print(f"ASCII Decimal: {decimal}")
+    print(f"Binario: {binario}")
+    #Imprime los resultados guardados en las variables
+
+
 def menu():
     while True:
         print("\n//////////////////////////////////////////////////////////////////////////////////")
