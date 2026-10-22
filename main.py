@@ -163,6 +163,54 @@ def op6():
 
     print(f"El resultado de la resta es: {resultado}")
 
+def op7():
+    print("Complemento a 1 y a 2")
+    #Solicita y autoriza el número
+    #Ciclo que se repite hasta que el meter un número válido
+    while True:
+        #input() pide texto, int() lo convierte a número entero.
+        #Si el se escribe algo que no sea un número decimal, int() falla y se activa el except
+        try:
+            #Verifica que el número esté en el rango permitido (1 a 127)
+            numero = int(input("Introduce un número decimal entre 1 y 127: "))
+            if 1 <= numero <= 127:
+                #break rompe el while si el número es válido, continua
+                break
+                #Si el número es entero pero está fuera del rango se imprimira el siguiente mensaje.
+                #Como no hubo break, el while vuelve a pedir el número
+            print("El número no esta entre 1 y 127.")
+        #Se ejecuta solo si int() falló (se ingresó texto, decimales como "3.5", vacío, etc.)
+        except ValueError:
+            print("Introduce un número entero válido.")
+    # Convierte el número a binario de 8 bits.
+    #format(numero, "08b"):
+    #b  = binario
+    #8  = ancho total de 8 caracteres
+    #0  = rellena con ceros a la izquierda si faltan dígitos
+    #Ejemplo: 5 -> "101" -> "00000101"
+    binario = format(numero, "08b")
+
+    #Complemento a 1: invierte cada bit del binario.
+    #"for bit in binario" recorre el texto carácter por carácter.
+    #"'1' if bit == '0' else '0'" cambia 0 por 1 y 1 por 0.
+    #"".join(...) vuelve a unir todos los caracteres en un solo texto.
+    #Ejemplo: "00000101" -> "11111010"
+    complemento_1 = "".join("1" if bit == "0" else "0" for bit in binario)
+
+    #Complemento a 2: se le suma 1 al complemento a 1. Se hace en 3 pasos:
+    #int(complemento_1, 2) -> convierte el texto binario a número (11111010 -> 250)
+    #+ 1 -> suma 1 (250 + 1 = 251)
+    #& 0xFF -> limita el resultado a 8 bits (máximo 255)
+    #Luego format(..., "08b") lo vuelve a convertir a binario de 8 bits
+    #Ejemplo: 251 -> "11111011"
+    complemento_2 = format((int(complemento_1, 2) + 1) & 0xFF, "08b")
+
+    #Resultados. La f permite meter variables dentro de {}
+    print(f"\nNúmero decimal: {numero}")
+    print(f"Binario (8 bits): {binario}")
+    print(f"Complemento a 1:  {complemento_1}")
+    print(f"Complemento a 2:  {complemento_2}")
+
 def op8():
     
     letra = input("Ingresa una letra mayúscula: ").upper() 
@@ -210,7 +258,7 @@ def menu():
                 case 6:
                     op6()
                 case 7:
-                    print("En proceso...")
+                    op7()
                 case 8:
                     print("En proceso...")
                 case 9:
