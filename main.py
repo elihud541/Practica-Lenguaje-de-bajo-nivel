@@ -212,19 +212,22 @@ def op7():
     print(f"Complemento a 2:  {complemento_2}")
 
 def op8():
+    print("LETRA MAYÚSCULA A ASCII DECIMAL Y BINARIO>>>")
     
     letra = input("Ingresa una letra mayúscula: ").upper() 
     #.upper es un metodo que convierte el caracter que escribió el usuario a mayusculas y que se guardara dentro de la variable letra
 
-    decimal = ord(letra) #ord() es la funcion que devuelve un caracter en su valor numerico decimal de la tabla ASCII y lo guarda en la variable decimal
-    binario = bin()[2:] #bin() convierte el numero de la variable decimal a su equivalente en binario
-    #python por defecto añade el prefijo '0b' y '[2:]' hace que se omitan estos caracteres  
-    
-    
-    print(f"ASCII Decimal: {decimal}")
-    print(f"Binario: {binario}")
-    #Imprime los resultados guardados en las variables
+    try: # Se ocupa el try para evitar que el programa marque error si escriben más de una letra o dejan vacio el input
+        decimal = ord(letra) # ord() es la función que devuelve un carácter en su valor numérico decimal de la tabla ASCII y lo guarda en la variable decimal
+        binario = bin(decimal)[2:] # bin() convierte el número de la variable decimal a su equivalente en binario
+        # Python por defecto añade el prefijo '0b' y '[2:]' hace que se omitan estos primeros 2 caracteres
+        
+        print(f"ASCII Decimal: {decimal}")
+        print(f"Binario: {binario}")
+        # Imprime los resultados guardados en las variables
 
+    except TypeError:
+        print("Hay un error, por favor ingresa unicamente una sola letra.")
 
 def menu():
     while True:
@@ -260,7 +263,7 @@ def menu():
                 case 7:
                     op7()
                 case 8:
-                    print("En proceso...")
+                    op8()
                 case 9:
                     print("Saliendo del programa...")
                     break
