@@ -1,5 +1,5 @@
 def op1():
-     print("BINARIO A OCTAL>>>")
+    print("BINARIO A OCTAL>>>")
     # Se utiliza un input de manera str para digitalizar el binario y ocupar 0 y 1 en posiciones diferentes.
     num_binario = input("Ingresa el numero binario: ")
 
@@ -52,7 +52,7 @@ def op3():
         print("Hay un error poor favor ingresa un numero octal valido (dígitos del 0 al 7).")
 
 def op4():
-      print("HEXADECIMAL A OCTAL>>>")
+    print("HEXADECIMAL A OCTAL>>>")
     # Se utiliza un input de manera str para capturar el numero hexadecimal permitiendo letras y numeros.
     num_hex = input("Ingresa el numero hexadecimal: ")
 
