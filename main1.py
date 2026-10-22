@@ -52,6 +52,22 @@ def op3():
         print("Hay un error poor favor ingresa un numero octal valido (dígitos del 0 al 7).")
 
 def op4():
+      print("HEXADECIMAL A OCTAL>>>")
+    # Se utiliza un input de manera str para capturar el numero hexadecimal permitiendo letras y numeros.
+    num_hex = input("Ingresa el numero hexadecimal: ")
+
+    try: # Se ocupa el try para evitar errores comunes si ingresan caracteres invalidos
+        # Variable donde se guardara el numero que se transformo de hexadecimal a decimal
+        # Esta funcion nos ayuda a cambiar de base indicando ,16) ya que el numero ingresado esta en base hexadecimal
+        decimal = int(num_hex, 16)
+
+        # Se ocupa la variable octal para guardar el resultado de la funcion de oct(), que convierte el numero decimal a octal
+        # Python ya tiene agregada esta funcion, pero ocupa un prefijo 0o, se ocupa el [2:] para quitar ese prefijo
+        octal = oct(decimal)[2:]
+
+        print(f"El resultado en octal es: {octal}")
+    except ValueError:
+        print("Hay un error por favor ingresa un numero hexadecimal valido (del 0 al 9 y de la A a la F).")
     pass
 
 def op5():
