@@ -1,4 +1,20 @@
 def op1():
+     print("BINARIO A OCTAL>>>")
+    # Se utiliza un input de manera str para digitalizar el binario y ocupar 0 y 1 en posiciones diferentes.
+    num_binario = input("Ingresa el numero binario: ")
+
+    try: # se ocupa el try para evitar los errores comunes de que no seleccionen el 0 o el 1
+        # Variable donde se guardara el numero que se transformo de binario a decimal
+        # Esta funcion nos ayuda a cambiar de base en el ,2) esto ya viene incluido en el lenguaje de python y avisa a que base esta dicho
+        decimal = int(num_binario, 2)
+
+        # Se ocupa la variable octal para guardar el resultado de la funcion de oct(), que convierte el numero decimal que ya se ha
+        # Python ya tiene agregado esta funcion, pero ocupa un prefijo 0o, se ocupa el [2:] para quitar ese prefijo, ya que inicia ocupándolo
+        octal = oct(decimal)[2:]
+
+        print(f"El resultado en octal es: {octal}")
+    except ValueError:
+        print("Hay un error por favor ingresa un numero binario valido (solo ceros y unos).")
     pass
 
 def op2():
